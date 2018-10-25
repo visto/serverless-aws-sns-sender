@@ -1,0 +1,28 @@
+service: aws-python-simple-http-endpoint
+
+frameworkVersion: ">=1.2.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: python3.6
+
+functions:
+  currentTime:
+    handler: handler.endpoint
+    events:
+      - http:
+          path: ping
+          method: get
+  sendSms:
+    handler: sender.send
+    events:
+      - http:
+          path: send
+          method: post
+
+plugins:
+  - serverless-python-requirements
+
+package:
+  exclude:
+    - a/** # virtualenv  
