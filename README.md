@@ -16,5 +16,5 @@ Adapt sender.py to contain your aws key and secret.
 Send a post request to https://blablabla.execute-api.us-east-1.amazonaws.com/dev/send with the following body:
 
 ```
-{ "number": "+49XXXXXXXXXX", "message": "Hello World!"}
+{ "number": "+49XXXXXXXXXX", "title" : "the title", "message": "Hello World!"}
 ```
